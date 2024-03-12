@@ -50,7 +50,6 @@ const Home = () => {
 	
 	function handleOnEnter(event) {
 		if (event.key === "Enter") {
-			
 			setTextArray(prevTextArray => [...prevTextArray, listItem]);
 			setTextBox("");	
 		}
@@ -63,10 +62,6 @@ const Home = () => {
 	function handleDelete(index) {
 		setTextArray(prevTextArray => prevTextArray.filter((_, i) => i !== index));
 	}
-	
-	// useEffect(() => {
-	// 	updateList(textArray);
-	// }, [])
 	
 	useEffect(() => {
 		console.log(textArray);
@@ -87,34 +82,3 @@ const Home = () => {
 };
 
 export default Home;
-
-// function deleteList() {
-// 	fetch('https://playground.4geeks.com/apis/fake/todos/user/terrylh22', {
-// 	  method: 'DELETE',
-// 	  headers: {
-// 		'Content-Type': 'application/json'
-// 	  }
-// 	})
-// 	  .then(res => {
-// 		if (!res.ok) throw Error(res.statusText);
-// 		return res.json();
-// 	  })
-// 	  .then(response => console.log('Success:', response))
-// 	  .catch(error => console.error(error));
-//   }
-
-// function createList() {
-// 	fetch('https://playground.4geeks.com/apis/fake/todos/user/terrylh22', {
-// 	  method: 'POST', // or 'POST'
-// 	  body: JSON.stringify([]),// data can be a 'string' or an {object} which comes from somewhere further above in our application
-// 	  headers: {
-// 		'Content-Type': 'application/json'
-// 	  }
-// 	})
-// 	  .then(res => {
-// 		if (!res.ok) throw Error(res.statusText);
-// 		return res.json();
-// 	  })
-// 	  .then(response => console.log('Success:', response))
-// 	  .catch(error => console.error(error));
-// }
